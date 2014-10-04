@@ -1,0 +1,3 @@
+{
+	array:[girl:"gogo",man:"kaxi"]
+}
