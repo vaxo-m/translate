@@ -1,0 +1,35 @@
+.container
+  p
+  .form-group
+    .col-md-10
+      input#word.form-control(type='text')
+    button.btn.btn-primary.col-md-2
+      | translate
+  p .
+  .form-group
+    .answer
+      #ans.alert
+script(type='text/javascript').
+    $("button").on("click",function(e){
+        e.preventDefault();
+        var word=$("#word").val();
+        $.ajax({
+          type:"POST",
+          data:{"word":word.trim()},
+          url: 'http://localhost:3000/translate',
+          error: function(a,b,c) { 
+            alert(JSON.stringify(a));
+          },
+          success: function(str) {
+            if(str!="Word Not Found"){              
+              $("#ans").html(str);
+              $("#ans").removeClass("alert-danger");
+              $("#ans").addClass("alert-success");
+            }else{
+              $("#ans").html(str);
+              $("#ans").removeClass("alert-success");
+              $("#ans").addClass("alert-danger");
+            }
+          }
+        });
+      });
