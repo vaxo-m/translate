@@ -1,14 +1,17 @@
 .container
-  p
-  .form-group
-    .col-md-10
-      input#word.form-control(type='text')
-    button.btn.btn-primary.col-md-2
-      | translate
-  p .
-  .form-group
-    .answer
-      #ans.alert
+  .row
+    .col-lg-10.col-lg-offset-1
+      .row
+        .col-lg-9
+          input#word.form-control(type='text')
+        .col-lg-3
+          button.btn.btn-primary.btn-block
+            | translate
+.container        
+  .row
+    .col-xs-12.col-lg-10.col-lg-offset-1
+      .answer#ans.alert
+
 script(type='text/javascript').
     $("button").on("click",function(e){
         e.preventDefault();
