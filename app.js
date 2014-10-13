@@ -5,8 +5,12 @@
 
 var express = require('express')
   , routes = require('./routes/index')
-  ,translator=require("./routes/translate");
-
+  ,translator=require("./routes/translate")
+  ,stylus = require('stylus');
+var mongoose=require("mongoose");
+mongoose.connect("mongodb://localhost/tutorial",function(){
+  console.log("connected to the database");
+});
 var app = module.exports = express.createServer();
 
 // Configuration
