@@ -1,0 +1,4 @@
+translate
+=========
+
+english-georgian dictionary
